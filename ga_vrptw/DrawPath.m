@@ -11,7 +11,7 @@ for i = 1:size(routes, 1)
     scatter(nodeCoor(1, 1), nodeCoor(1, 2), 'rv')
     hold on
     % 顾客点
-    scatter(nodeCoor(2:end, 1), nodeCoor(2:end, 2), 'go')
+    scatter(nodeCoor(2:end, 1), nodeCoor(2:end, 2), 'ko')
     hold on
     % axis([0, 35, 0, 25]);
     % 加注释（这里用p不要用i，i上面用过了）
@@ -21,10 +21,13 @@ for i = 1:size(routes, 1)
         text(nodeCoor(p, 1)+1, nodeCoor(p, 2)+1, strTemp, 'FontSize', 10);
     end
     for j = 1:size(routes, 2)
-        % 这里保证每辆车的路径可以随机选择不同颜色（还可以记录已经跑过的车的路径颜色，若后面的颜色和之前的相同，则重新生成新的颜色）
-        colors = ['r', 'g', 'b', 'c', 'm', 'y', 'k'];
-        temp = randperm(length(colors));
-        color = colors(temp(1));
+        % 这里保证每辆车的路径可以随机选择不同颜色（length(colors)一循环，第一辆车跑的路径颜色和第1 + n * length(colors)相同）
+        colors = ['m', 'c', 'g', 'r', 'b',  'y', 'k'];
+        if j <= length(colors)
+            color = colors(j);
+        else
+            color = colors(mod(j, length(colors)));
+        end
         if ~isempty(routes{i, j})
             subRoute = routes{i, j};
             if length(subRoute) == 1

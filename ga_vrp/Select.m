@@ -42,6 +42,5 @@ for i = 1:size(chrom, 1)
 end
 % 对选出的子代在父代中的索引进行升序排序，由于父代的适应度值是降序排序，所以这里的索引越小代表适应度值越高
 [sortChildIndex, ~] = sort(childrenIndex, 'ascend');
-% 选出前nChildren个子代
+% 选出前nChildren个子代的索引
 childrenIndex = sortChildIndex(1:nChildren);%m(1:NSel)是NSel个序号最小的，也就是适应度值最好的，因为之前给适应度值进行从大到小的排序
-% 选择前nChildren个个体

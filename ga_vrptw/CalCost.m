@@ -16,10 +16,10 @@ routesCost = zeros(size(routes, 1), 1);
 subRouteCost = {};
 % subRouteCost = {}作为存储数组
 for i = 1: size(routes, 1)
-        % 为了计算车辆数，去除route{i, :}中的空矩阵，注意这里是{routes{i, :}}，如果没有外面的{}，那么temp == routes{i, 1}，这里外面的{}很重要
-        temp = {routes{i, :}};
-        % 运用此函数还省去了以下判断routes{i, :}中是否含空值[]（if ~isempty(routes{i, j})）
-        temp(cellfun(@isempty, temp)) = [];
+    % 为了计算车辆数，去除route{i, :}中的空矩阵，注意这里是{routes{i, :}}，如果没有外面的{}，那么temp == routes{i, 1}，这里外面的{}很重要
+    temp = {routes{i, :}};
+    % 运用此函数还省去了以下判断routes{i, :}中是否含空值[]（if ~isempty(routes{i, j})）
+    temp(cellfun(@isempty, temp)) = [];
     for j = 1:size(temp, 2)
         % 每换一条新的子路径，更新总经过时间、等待时间、延迟时间
         time = 0;

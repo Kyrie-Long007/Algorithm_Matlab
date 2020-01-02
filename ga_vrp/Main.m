@@ -7,14 +7,15 @@ clc;
 close all;
 tic
 
-NVEHICLE = 9;  % 可使用的最大车辆数
-M = 1000;  % 违反最大车辆约束的惩罚因子 
-MAXLOAD = 200;  % 车辆最大载重
+% 如果不需要最大车辆约束，可以把NVEHICLE设成一个任意大的正数
+NVEHICLE = 3;  % 可使用的最大车辆数
+% M是任意大的正数均可（远大于可行解的值就行）
+M = 2000;  % 违反最大车辆约束的惩罚因子 
+MAXLOAD = 15;  % 车辆最大载重
 
 %% 初始化参数（矩阵）
-
-load data100;
-data = data100;
+load data12;
+data = data12;
 nodeCoor = data(:, 1:2);
 demand = data(:, 3);
 timeWindow = data(:, 4:5);
