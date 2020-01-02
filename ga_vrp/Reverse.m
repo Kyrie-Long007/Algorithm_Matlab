@@ -24,5 +24,3 @@ reverseRoutes = Decode(demand, N, MAXLOAD, reverseChildren);
 index = reverseRoutesLength < routesLength;
 children(index, :) = reverseChildren(index, :);
 chrom = children;
-
-

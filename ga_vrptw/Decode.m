@@ -33,9 +33,3 @@ for i = 1:size(chrom, 1)
         end
     end
 end
-
-
-            
-
-            
-        

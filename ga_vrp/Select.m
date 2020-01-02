@@ -45,22 +45,3 @@ end
 % 选出前nChildren个子代
 childrenIndex = sortChildIndex(1:nChildren);%m(1:NSel)是NSel个序号最小的，也就是适应度值最好的，因为之前给适应度值进行从大到小的排序
 % 选择前nChildren个个体
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

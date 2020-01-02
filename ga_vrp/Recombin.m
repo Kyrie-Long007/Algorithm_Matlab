@@ -50,5 +50,4 @@ if r1 ~= r2
             b(i2) = b1(i);
         end
     end
-end
-    
+end  

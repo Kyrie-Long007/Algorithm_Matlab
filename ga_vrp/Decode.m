@@ -31,10 +31,4 @@ for i = 1:size(chrom, 1)
             routes{i, k} = s(routeIndex(k)+1:routeIndex(k+1));
         end
     end
-end
-
-
-            
-
-            
-        
+end 

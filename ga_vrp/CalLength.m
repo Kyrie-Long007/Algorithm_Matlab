@@ -7,7 +7,7 @@ function [subRouteLength, routesLength] = CalLength(NVEHICLE, M, dis, routes)
 routesLength = zeros(size(routes, 1), 1);
 % subRoute的个数是不确定的，所以不能分配确定的空间
 subRouteLength = {};
-% subRouteLength = {}作为存储数组，len作为变量用来计算每一条子路径的长度
+% subRouteLength = {}作为存储数组
 for i = 1: size(routes, 1)
     % 为了计算车辆数，去除route{i, :}中的空矩阵，注意这里是{routes{i, :}}，如果没有外面的{}，那么temp == routes{i, 1}，这里外面的{}很重要
     temp = {routes{i, :}};
